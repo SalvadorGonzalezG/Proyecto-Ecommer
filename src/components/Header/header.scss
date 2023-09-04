@@ -1,0 +1,36 @@
+$menu-color : #3d3d3d;
+@mixin header-link {
+    color: $menu-color;
+        text-decoration: none; //quitamos lo subrayado
+        letter-spacing: 2px; //espaciar letras
+}
+.header{
+    background-color: rgb(246, 225, 238);
+    display: flex; // alinear elementos en una sola fila
+    justify-content: space-between; // se distribuyen hasta la parte izqu
+    align-items: center; //centrar itemps ( se sentra (logo)
+    padding: 15px 30px; 
+
+    &__logo{
+@include header-link; // utilizar mixin.
+    }
+    &__nav-list{
+        display: flex; //acomodamos los elementos de una lista en forma horizontal
+        list-style: none; //quitar los puntos en una lista
+        gap: 20px //espaciado entre elementos.
+    }
+    &__item-link{ // etiqueta del enlace
+        @include header-link;
+        &--is-active {
+            border-bottom: 2px solid $menu-color;
+        }
+        &:hover{
+            border-bottom: 2px solid $menu-color; //al seleccionar un elemento aparece un sobrayado
+            transition: .03s;
+        }
+
+      
+
+
+    }
+}
