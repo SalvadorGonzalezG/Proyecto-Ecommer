@@ -23,6 +23,9 @@ const Header = () => {
           <NavLink to='/Lomasvendido' className={({ isActive }) => linkIsActive(isActive)}>L.M. Vendido.</NavLink>
         </li>
         <li className='header__list-item'>
+          <NavLink to='/Pasteleria' className={({ isActive }) => linkIsActive(isActive)}>Pasteleria</NavLink>
+        </li>
+        <li className='header__list-item'>
           <NavLink to='/Secret' className={({ isActive }) => linkIsActive(isActive)}>Secret</NavLink>
         </li>
         <li className='header__list-item'>
