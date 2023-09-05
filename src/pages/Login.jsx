@@ -10,8 +10,10 @@ const Login = () => {
   const sendData = async (data) => {
     try { // como manejamos una promesa con aweit es necesario usar un try catch para el manejo de errores.
       const response = await loginUserService(data) // es una promesa.
-      console.log(response)
-    } catch (error) {
+      // console.log(response) // imprime la llamada a la api para ver uno de los datos más importantes, el token.
+      const token = response.data.token
+      localStorage.setItem("jwt_token", token) // lo guardamos en el local storage ya que este token lo encontramos  en data.token, este mismo dato lo podremos ver al colocar en la consola -> localStorage
+    } catch (error) { // si no recibe el token de la misma manera manda el error
       console.log(error)
     }
   }
