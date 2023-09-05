@@ -14,7 +14,13 @@ const Header = () => {
           <NavLink to='/' className={({ isActive }) => linkIsActive(isActive)}>Home</NavLink>
         </li>
         <li className='header__list-item'>
-          <NavLink to='/Dashboard' className={({ isActive }) => linkIsActive(isActive)}>Dashboard</NavLink>
+          <NavLink to='/Destacado' className={({ isActive }) => linkIsActive(isActive)}>Destacado</NavLink>
+        </li>
+        <li className='header__list-item'>
+          <NavLink to='/Promociones' className={({ isActive }) => linkIsActive(isActive)}>Promociones</NavLink>
+        </li>
+        <li className='header__list-item'>
+          <NavLink to='/Lomasvendido' className={({ isActive }) => linkIsActive(isActive)}>L.M. Vendido.</NavLink>
         </li>
         <li className='header__list-item'>
           <NavLink to='/Secret' className={({ isActive }) => linkIsActive(isActive)}>Secret</NavLink>
@@ -25,6 +31,7 @@ const Header = () => {
         <li className='header__list-item'>
           <NavLink to='/Singup' className={({ isActive }) => linkIsActive(isActive)}>Singup</NavLink>
         </li>
+
       </ul>
     </nav>
   )

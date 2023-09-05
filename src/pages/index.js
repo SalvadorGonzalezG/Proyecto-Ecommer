@@ -1,13 +1,18 @@
 import Home from './Home'
-import Dashboard from './Dashboard'
+import Promociones from './Promociones'
+import Lomasvendido from './Lomasvendido'
 import Login from './Login'
 import Singup from './Singup'
 import Secret from './Secret'
+import Destacado from './Destacado'
 
 export {
   Home,
-  Dashboard,
+  Destacado,
+  Promociones,
+  Lomasvendido,
   Login,
   Singup,
   Secret
+
 }
