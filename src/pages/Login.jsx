@@ -1,29 +1,19 @@
-import logo from '@/assets/react.svg'
+import logo from '@/assets/login.jpg'
 import '@/styles/form.css' // importamos el estilo para este formulario el cual se encuentra en la carpeta styles y el archivo se llama form.css
 import { useState } from 'react'
-import axios from 'axios'
+import { loginUserService } from '@/services/userService'
 
 const Login = () => {
   const [email, setEmail] = useState('') // hook de useState
   const [password, setPassword] = useState('')
 
   const sendData = async (data) => {
-    const config = {
-      method: 'post',// metodo con el cual podemos mandar nuestros datos para el inicio
-      maxBodyLength: Infinity,
-      url: 'https://reactavanzadom6.onrender.com/login',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data : JSON.stringify(data)
+    try { // como manejamos una promesa con aweit es necesario usar un try catch para el manejo de errores.
+      const response = await loginUserService(data) // es una promesa.
+      console.log(response)
+    } catch (error) {
+      console.log(error)
     }
-    axios.request(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
   const handleSubmit = (e) => {
     e.preventDefault() // evita que se vuelva a cargar la pag
@@ -31,9 +21,9 @@ const Login = () => {
   }
   return (
     <main className='form-signin w-100 m-auto'>
-      <form onSubmit={handleSubmit}> {// accion que queremos que haga del formulario  
-}
-        <img className='mb-4' src={logo} alt='React' width='72' height='57' />
+      <form onSubmit={handleSubmit}> {// accion que queremos que haga del formulario
+      }
+        <img className='mb-4' src={logo} alt='React' width='150' height='150' />
         <h1 className='h3 mb-3 fw-normal'>Please sign in</h1>
 
         <div className='form-floating'>
